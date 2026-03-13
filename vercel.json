@@ -1,7 +1,0 @@
-{
-  "routes": [
-    { "src": "^/test", "dest": "https://test-project.vercel.app" },
-    { "src": "^/slider", "dest": "https://slider-project.vercel.app" },
-    { "src": "^/ai", "dest": "https://ai-project.vercel.app" }
-  ]
-}
