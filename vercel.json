@@ -1,7 +1,7 @@
 {
   "redirects": [
     { "source": "/test/:path*", "destination": "https://test-ten-teal-60.vercel.app/:path*", "permanent": false },
-    { "source": "/:path*", "destination": "https://test-ten-teal-60.vercel.app/:path*", "permanent": false },
-    { "source": "/ai/:path*", "destination": "https://ai-project.vercel.app/:path*", "permanent": false }
+    { "source": "/ai/:path*", "destination": "https://ai-project.vercel.app/:path*", "permanent": false },
+    { "source": "/:path*", "destination": "https://seekenreigh.figma.site/:path*", "permanent": false }
   ]
 }
