@@ -1,8 +1,12 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/test",
-      "dest": "https://kenreigh-one.figma.site"
+      "source": "/test",
+      "destination": "https://kenreigh-one.figma.site"
+    },
+    {
+      "source": "/test/:path*",
+      "destination": "https://kenreigh-one.figma.site/:path*"
     }
   ]
 }
