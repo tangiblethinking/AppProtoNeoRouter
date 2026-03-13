@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/test",
-      "destination": "https://test-one-khaki-64.vercel.app/"
+      "destination": "https://test-one-khaki-64.vercel.app"
     },
     {
       "source": "/test/:path*",
