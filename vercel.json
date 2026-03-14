@@ -11,7 +11,7 @@
     {
       "source": "/",
       "destination": "https://websitedefaultstate.vercel.app/"
-    }
+    },
     {
       "source": "/:path*",
       "destination": "https://websitedefaultstate.vercel.app/:path*"
