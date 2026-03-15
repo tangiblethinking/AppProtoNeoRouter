@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/portfolioa1",
-      "destination": "https://portfolio-revance.vercel.app"
+      "destination": "https://cricut-gamma.vercel.app"
     },
     {
       "source": "/portfolioa1/:path*",
-      "destination": "https://portfolio-revance.vercel.app/:path*"
+      "destination": "https://cricut-gamma.vercel.app/:path*"
     },
     {
       "source": "/revance",
