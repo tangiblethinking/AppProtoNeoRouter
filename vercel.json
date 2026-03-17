@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/portfolioa5",
+      "destination": "https://jerryai.vercel.app"
+    },
+    {
+      "source": "/portfolioa5/:path*",
+      "destination": "https://jerryai.vercel.app/:path*"
+    },
+    {
       "source": "/portfolioa4",
       "destination": "https://jerryai.vercel.app"
     },
