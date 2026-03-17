@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/portfolioa5",
-      "destination": "https://jerryai.vercel.app"
+      "destination": "https://appprotoneov005pbes.vercel.app"
     },
     {
       "source": "/portfolioa5/:path*",
-      "destination": "https://jerryai.vercel.app/:path*"
+      "destination": "https://appprotoneov005pbes.vercel.app/:path*"
     },
     {
       "source": "/portfolioa4",
