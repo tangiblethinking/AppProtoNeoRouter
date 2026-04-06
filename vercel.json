@@ -194,11 +194,11 @@
     },
     {
       "source": "/",
-      "destination": "https://websitedefaultstate.vercel.app/"
+      "destination": "https://appprotoneov001.vercel.app"
     },
     {
       "source": "/:path*",
-      "destination": "https://websitedefaultstate.vercel.app/:path*"
+      "destination": "https://appprotoneov001.vercel.app/:path*"
     }
   ]
 }
