@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/portfolioa65",
+      "source": "/portfolioa26",
       "destination": "https://appprotoneov028pmed.vercel.app"
     },
     {
