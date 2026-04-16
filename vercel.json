@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/pearll",
-      "destination": "https://wise-sable-70780497.figma.site"
+      "destination": "https://aimarketecasestudy.vercel.app"
     },
     {
       "source": "/pearll/:path*",
-      "destination": "https://wise-sable-70780497.figma.site/:path*"
+      "destination": "https://aimarketecasestudy.vercel.app/:path*"
     },
     {
       "source": "/pearl",
