@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/pearl2",
-      "destination": "https://aimarketecasestudy.vercel.app"
+      "source": "/pearll",
+      "destination": "https://wise-sable-70780497.figma.site"
     },
     {
-      "source": "/pearl2/:path*",
-      "destination": "https://aimarketecasestudy.vercel.app/:path*"
+      "source": "/pearll/:path*",
+      "destination": "https://wise-sable-70780497.figma.site/:path*"
     },
     {
       "source": "/pearl",
