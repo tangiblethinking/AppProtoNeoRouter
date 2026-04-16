@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/pearl",
+      "destination": "https://pearl-directorof-product-design.vercel.app"
+    },
+    {
+      "source": "/pearl/:path*",
+      "destination": "https://pearl-directorof-product-design.vercel.app/:path*"
+    },
+    {
       "source": "/portfolioa31",
       "destination": "https://appprotoneov033pabr.vercel.app"
     },
