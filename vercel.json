@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/pearl2",
+      "destination": "https://aimarketecasestudy.vercel.app"
+    },
+    {
+      "source": "/pearl2/:path*",
+      "destination": "https://aimarketecasestudy.vercel.app/:path*"
+    },
+    {
       "source": "/pearl",
       "destination": "https://pearl-directorof-product-design.vercel.app"
     },
