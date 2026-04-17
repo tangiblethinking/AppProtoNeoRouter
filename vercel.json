@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/pearll",
-      "destination": "https://aimarketecasestudy.vercel.app"
+      "source": "/aisearchstudy",
+      "destination": "https://teststudynew.vercel.app"
     },
     {
-      "source": "/pearll/:path*",
-      "destination": "https://aimarketecasestudy.vercel.app/:path*"
+      "source": "/aisearchstudy/:path*",
+      "destination": "https://teststudynew.vercel.app/:path*"
     },
     {
       "source": "/pearl",
