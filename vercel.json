@@ -58,11 +58,11 @@
     },
     {
       "source": "/director",
-      "destination": "https://appprotoneov002.vercel.app"
+      "destination": "https://appprotoneov002-new.vercel.app"
     },
     {
       "source": "/director/:path*",
-      "destination": "https://appprotoneov002.vercel.app/:path*"
+      "destination": "https://appprotoneov002-new.vercel.app/:path*"
     },
     {
       "source": "/portfolioa27",
@@ -282,11 +282,11 @@
     },
     {
       "source": "/",
-      "destination": "https://appprotoneov002.vercel.app"
+      "destination": "https://appprotoneov002-new.vercel.app"
     },
     {
       "source": "/:path*",
-      "destination": "https://appprotoneov002.vercel.app/:path*"
+      "destination": "https://appprotoneov002-new.vercel.app/:path*"
     }
   ]
 }
