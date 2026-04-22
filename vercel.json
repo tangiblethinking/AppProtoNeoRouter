@@ -282,11 +282,11 @@
     },
     {
       "source": "/",
-      "destination": "https://appprotoneov001-alt.vercel.app"
+      "destination": "https://appprotoneov002.vercel.app"
     },
     {
       "source": "/:path*",
-      "destination": "https://appprotoneov001-alt.vercel.app/:path*"
+      "destination": "https://appprotoneov002.vercel.app/:path*"
     }
   ]
 }
