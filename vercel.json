@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/personagen",
+      "destination": "https://personabehaviorgravitas.vercel.app"
+    },
+    {
+      "source": "/personagen/:path*",
+      "destination": "https://personabehaviorgravitas.vercel.app/:path*"
+    },
+    {
       "source": "/portfolioa32",
       "destination": "https://appprotoneov034pali.vercel.app"
     },
