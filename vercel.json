@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/personagen",
-      "destination": "https://personabehaviorgravitas.vercel.app"
+      "destination": "https://fresh-koala-45246975.figma.site"
     },
     {
       "source": "/personagen/:path*",
-      "destination": "https://personabehaviorgravitas.vercel.app/:path*"
+      "destination": "https://fresh-koala-45246975.figma.site/:path*"
     },
     {
       "source": "/portfolioa32",
