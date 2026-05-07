@@ -2,17 +2,23 @@
     "rewrites": [
           { "source": "/personagen", "destination": "https://fresh-koala-45246975.figma.site" },
           { "source": "/personagen/:path*", "destination": "https://fresh-koala-45246975.figma.site/:path*" },
+        
           { "source": "/portfolioa32", "destination": "https://appprotoneov001ai.vercel.app" },
           { "source": "/portfolioa32/:path*", "destination": "https://appprotoneov001ai.vercel.app/:path*" },
+        
           { "source": "/aisearchstudy", "destination": "https://teststudynew.vercel.app" },
           { "source": "/aisearchstudy/:path*", "destination": "https://teststudynew.vercel.app/:path*" },
+        
           { "source": "/pearl", "destination": "https://pearl-directorof-product-design.vercel.app" },
           { "source": "/pearl/:path*", "destination": "https://pearl-directorof-product-design.vercel.app/:path*" },
+        
           { "source": "/director", "destination": "https://appprotoneov002-new.vercel.app" },
           { "source": "/director/:path*", "destination": "https://appprotoneov002-new.vercel.app/:path*" },
+        
           { "source": "/revance", "destination": "https://revance.vercel.app" },
           { "source": "/revance/:path*", "destination": "https://revance.vercel.app/:path*" },
-          { "source": "/", "destination": "https://appprotoneov001ai.vercel.app" },
-          { "source": "/:path*", "destination": "https://appprotoneov001ai.vercel.app/:path*" }
+        
+          { "source": "/", "destination": "https://testingonly001.vercel.app" },
+          { "source": "/:path*", "destination": "https://testingonly001.vercel.app/:path*" }
     ]
 }
