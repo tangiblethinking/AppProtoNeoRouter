@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/ape", "destination": "https://ape-x-apple-cl-007v1-gemini.vercel.app/ape" },
-    { "source": "/ape/:path*", "destination": "https://ape-x-apple-cl-007v1-gemini.vercel.app/ape/:path*" },
+    { "source": "/ape", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape" },
+    { "source": "/ape/:path*", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape/:path*" },
     
     { "source": "/portfolioa32", "destination": "https://appprotoneov001ai.vercel.app" },
     { "source": "/portfolioa32/:path*", "destination": "https://appprotoneov001ai.vercel.app/:path*" },
