@@ -1,5 +1,8 @@
 {
   "rewrites": [
+    { "source": "/laws", "destination": "https://uxlegal-9iaaq69rf-mrkhrisk-5412s-projects.vercel.app" },
+    { "source": "/laws/:path*", "destination": "https://uxlegal-9iaaq69rf-mrkhrisk-5412s-projects.vercel.app/:path*" },
+    
     { "source": "/ape", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape" },
     { "source": "/ape/:path*", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape/:path*" },
     
