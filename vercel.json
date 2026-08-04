@@ -1,5 +1,8 @@
 {
   "rewrites": [
+    { "source": "/vlabs", "destination": "https://virtual-labs-mu.vercel.app" },
+    { "source": "/vlabs/:path*", "destination": "https://virtual-labs-mu.vercel.app/:path*" },
+    
     { "source": "/laws", "destination": "https://uxlegal-9iaaq69rf-mrkhrisk-5412s-projects.vercel.app" },
     { "source": "/laws/:path*", "destination": "https://uxlegal-9iaaq69rf-mrkhrisk-5412s-projects.vercel.app/:path*" },
     
