@@ -3,8 +3,8 @@
     { "source": "/vlabs", "destination": "https://virtual-labs-mu.vercel.app" },
     { "source": "/vlabs/:path*", "destination": "https://virtual-labs-mu.vercel.app/:path*" },
     
-    { "source": "/laws", "destination": "https://uxlegal-9iaaq69rf-mrkhrisk-5412s-projects.vercel.app" },
-    { "source": "/laws/:path*", "destination": "https://uxlegal-9iaaq69rf-mrkhrisk-5412s-projects.vercel.app/:path*" },
+    { "source": "/laws", "destination": "https://uxlegal-git-main-mrkhrisk-5412s-projects.vercel.app" },
+    { "source": "/laws/:path*", "destination": "https://uxlegal-git-main-mrkhrisk-5412s-projects.vercel.app/:path*" },
     
     { "source": "/ape", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape" },
     { "source": "/ape/:path*", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape/:path*" },
