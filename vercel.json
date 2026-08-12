@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/IA", "destination": "https://infoarchdesign.vercel.app" },
-    { "source": "/IA/:path*", "destination": "https://infoarchdesign.vercel.app/:path*" },
+    { "source": "/ia", "destination": "https://infoarchdesign.vercel.app" },
+    { "source": "/ia/:path*", "destination": "https://infoarchdesign.vercel.app/:path*" },
     
     { "source": "/vlabs", "destination": "https://virtual-labs-mu.vercel.app" },
     { "source": "/vlabs/:path*", "destination": "https://virtual-labs-mu.vercel.app/:path*" },
