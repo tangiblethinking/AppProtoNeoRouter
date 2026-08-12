@@ -1,5 +1,8 @@
 {
   "rewrites": [
+    { "source": "/oma", "destination": "https://oma-ashen.vercel.app" },
+    { "source": "/oma/:path*", "destination": "https://oma-ashen.vercel.app/:path*" },
+    
     { "source": "/ia", "destination": "https://infoarchdesign.vercel.app" },
     { "source": "/ia/:path*", "destination": "https://infoarchdesign.vercel.app/:path*" },
     
