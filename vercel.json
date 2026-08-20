@@ -36,7 +36,7 @@
     { "source": "/collaboration", "destination": "https://opodesignonovo.vercel.app" },
     { "source": "/collaboration/:path*", "destination": "https://opodesignonovo.vercel.app/:path*" },
     
-    { "source": "/", "destination": "https://prodportfo.vercel.app" },
-    { "source": "/:path*", "destination": "https://prodportfo.vercel.app/:path*" }
+    { "source": "/", "destination": "https://test-portfo.vercel.app" },
+    { "source": "/:path*", "destination": "https://test-portfo.vercel.app/:path*" }
   ]
 }
