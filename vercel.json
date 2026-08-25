@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/job", "destination": "https://ats-x.vercel.app/job" },
-    { "source": "/job/", "destination": "https://ats-x.vercel.app/job" },
+    { "source": "/job", "destination": "https://ats-x.vercel.app/job/" },
+    { "source": "/job/", "destination": "https://ats-x.vercel.app/job/" },
     { "source": "/job/:path*", "destination": "https://ats-x.vercel.app/job/:path*" },
     
     { "source": "/oma", "destination": "https://oma-ashen.vercel.app" },
