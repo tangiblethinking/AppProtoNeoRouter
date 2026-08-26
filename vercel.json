@@ -1,44 +1,44 @@
 {
   "rewrites": [
-    { "source": "/job", "destination": "https://ats-x.vercel.app" },
-    { "source": "/job/:path*", "destination": "https://ats-x.vercel.app/:path*" },
-    
+    { "source": "/job", "destination": "/api/job-proxy" },
+    { "source": "/job/:path*", "destination": "/api/job-proxy?path=:path*" },
+
     { "source": "/oma", "destination": "https://oma-ashen.vercel.app" },
     { "source": "/oma/:path*", "destination": "https://oma-ashen.vercel.app/:path*" },
-    
+
     { "source": "/ia", "destination": "https://infoarchdesign.vercel.app" },
     { "source": "/ia/:path*", "destination": "https://infoarchdesign.vercel.app/:path*" },
-    
+
     { "source": "/vlabs", "destination": "https://virtual-labs-mu.vercel.app" },
     { "source": "/vlabs/:path*", "destination": "https://virtual-labs-mu.vercel.app/:path*" },
-    
+
     { "source": "/laws", "destination": "https://uxlegal-git-main-mrkhrisk-5412s-projects.vercel.app" },
     { "source": "/laws/:path*", "destination": "https://uxlegal-git-main-mrkhrisk-5412s-projects.vercel.app/:path*" },
-    
+
     { "source": "/ape", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape" },
     { "source": "/ape/:path*", "destination": "https://ape-x-apple-cl-007v1-gemini-001.vercel.app/ape/:path*" },
-    
+
     { "source": "/portfolioa32", "destination": "https://appprotoneov001ai.vercel.app" },
     { "source": "/portfolioa32/:path*", "destination": "https://appprotoneov001ai.vercel.app/:path*" },
-    
+
     { "source": "/designops", "destination": "https://design-ops-case-study.vercel.app" },
     { "source": "/designops/:path*", "destination": "https://design-ops-case-study.vercel.app/:path*" },
-    
+
     { "source": "/ecomm", "destination": "https://director-case-study-ux-bgoals.vercel.app" },
     { "source": "/ecomm/:path*", "destination": "https://director-case-study-ux-bgoals.vercel.app/:path*" },
-    
+
     { "source": "/uxtrans", "destination": "https://company-ux-transform.vercel.app" },
     { "source": "/uxtrans/:path*", "destination": "https://company-ux-transform.vercel.app/:path*" },
-    
+
     { "source": "/discovery", "destination": "https://teststudynew.vercel.app" },
     { "source": "/discovery/:path*", "destination": "https://teststudynew.vercel.app/:path*" },
-    
+
     { "source": "/persona", "destination": "https://persongratadata.vercel.app" },
     { "source": "/persona/:path*", "destination": "https://persongratadata.vercel.app/:path*" },
-    
+
     { "source": "/collaboration", "destination": "https://opodesignonovo.vercel.app" },
     { "source": "/collaboration/:path*", "destination": "https://opodesignonovo.vercel.app/:path*" },
-    
+
     { "source": "/", "destination": "https://test-portfo.vercel.app" },
     { "source": "/:path*", "destination": "https://test-portfo.vercel.app/:path*" }
   ]
