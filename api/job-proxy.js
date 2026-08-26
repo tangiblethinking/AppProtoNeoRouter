@@ -14,15 +14,13 @@ function upstreamPath(reqUrl) {
   return pathname;
 }
 
+/** Prefix root-relative app asset paths with /job (idempotent). */
 function rewriteHtml(html) {
-  let out = html;
-  out = out.replace(/(href|src)=(["'])\/(assets\/)/g, "$1=$2/job/$3");
-  out = out.replace(/(href|src)=(["'])\/(__grok\/)/g, "$1=$2/job/$3");
-  out = out.replace(/(href|src)=(["'])\/(favicon\.svg)/g, "$1=$2/job/$3");
-  out = out.replace(/(href|src)=(["'])\/(favicon\.ico)/g, "$1=$2/job/$3");
-  out = out.replace(/\/assets\//g, "/job/assets/");
-  out = out.replace(/\/__grok\//g, "/job/__grok/");
-  return out;
+  return html
+    .replace(/(?<!\/job)\/assets\//g, "/job/assets/")
+    .replace(/(?<!\/job)\/__grok\//g, "/job/__grok/")
+    .replace(/(href|src)=(["'])\/favicon\.svg/g, "$1=$2/job/favicon.svg")
+    .replace(/(href|src)=(["'])\/favicon\.ico/g, "$1=$2/job/favicon.ico");
 }
 
 function shouldRewriteBody(contentType) {
