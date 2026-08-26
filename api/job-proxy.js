@@ -1,22 +1,14 @@
 const UPSTREAM = "https://ats-x.vercel.app";
 
-/**
- * Map incoming /api/job-proxy[/...] to upstream path on ats-x.
- * Rewrites:
- *   /job              → /api/job-proxy
- *   /job/:path*       → /api/job-proxy/:path*
- */
 function upstreamPath(reqUrl) {
   const u = new URL(reqUrl, "http://localhost");
   let pathname = u.pathname || "/";
-  // Strip the function prefix
   if (pathname === "/api/job-proxy" || pathname === "/api/job-proxy/") {
     return "/";
   }
   if (pathname.startsWith("/api/job-proxy/")) {
     return pathname.slice("/api/job-proxy".length) || "/";
   }
-  // Fallback if somehow invoked as /job directly
   if (pathname === "/job" || pathname === "/job/") return "/";
   if (pathname.startsWith("/job/")) return pathname.slice("/job".length) || "/";
   return pathname;
@@ -24,12 +16,10 @@ function upstreamPath(reqUrl) {
 
 function rewriteHtml(html) {
   let out = html;
-  // Root-relative asset URLs → under /job so they hit this proxy again
   out = out.replace(/(href|src)=(["'])\/(assets\/)/g, "$1=$2/job/$3");
   out = out.replace(/(href|src)=(["'])\/(__grok\/)/g, "$1=$2/job/$3");
   out = out.replace(/(href|src)=(["'])\/(favicon\.svg)/g, "$1=$2/job/$3");
   out = out.replace(/(href|src)=(["'])\/(favicon\.ico)/g, "$1=$2/job/$3");
-  // Serialized router / modulepreload payloads
   out = out.replace(/\/assets\//g, "/job/assets/");
   out = out.replace(/\/__grok\//g, "/job/__grok/");
   return out;
@@ -45,7 +35,7 @@ function shouldRewriteBody(contentType) {
   );
 }
 
-export default async function handler(req, res) {
+async function handle(req, res) {
   try {
     const path = upstreamPath(req.url);
     const target = new URL(path, UPSTREAM);
@@ -141,3 +131,5 @@ export default async function handler(req, res) {
     res.end("Bad gateway proxying ATS-X");
   }
 }
+
+export default handle;
