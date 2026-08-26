@@ -2,23 +2,18 @@ const UPSTREAM = "https://ats-x.vercel.app";
 
 function upstreamPath(reqUrl) {
   const u = new URL(reqUrl, "http://localhost");
-  let pathname = u.pathname || "/";
-  if (pathname === "/api/job-proxy" || pathname === "/api/job-proxy/") {
-    return "/";
+  const p = u.searchParams.get("__path");
+  if (p != null && p !== "") {
+    return p.startsWith("/") ? p : `/${p}`;
   }
-  if (pathname.startsWith("/api/job-proxy/")) {
-    return pathname.slice("/api/job-proxy".length) || "/";
-  }
-  if (pathname === "/job" || pathname === "/job/") return "/";
-  if (pathname.startsWith("/job/")) return pathname.slice("/job".length) || "/";
-  return pathname;
+  return "/";
 }
 
 /** Prefix root-relative app asset paths with /job (idempotent). */
 function rewriteHtml(html) {
   return html
-    .replace(/(?<!\/job)\/assets\//g, "/job/assets/")
-    .replace(/(?<!\/job)\/__grok\//g, "/job/__grok/")
+    .replace(/(^|[^\w/])\/assets\//g, "$1/job/assets/")
+    .replace(/(^|[^\w/])\/__grok\//g, "$1/job/__grok/")
     .replace(/(href|src)=(["'])\/favicon\.svg/g, "$1=$2/job/favicon.svg")
     .replace(/(href|src)=(["'])\/favicon\.ico/g, "$1=$2/job/favicon.ico");
 }
@@ -33,13 +28,14 @@ function shouldRewriteBody(contentType) {
   );
 }
 
-async function handle(req, res) {
+export default async function handler(req, res) {
   try {
     const path = upstreamPath(req.url);
     const target = new URL(path, UPSTREAM);
 
     const incoming = new URL(req.url, "http://localhost");
     for (const [k, v] of incoming.searchParams) {
+      if (k === "__path") continue;
       target.searchParams.set(k, v);
     }
 
@@ -129,5 +125,3 @@ async function handle(req, res) {
     res.end("Bad gateway proxying ATS-X");
   }
 }
-
-export default handle;
