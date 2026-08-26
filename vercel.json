@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/job", "destination": "/api/job-proxy" },
-    { "source": "/job/(.*)", "destination": "/api/job-proxy?__path=$1" },
+    { "source": "/job", "destination": "/job.html" },
+    { "source": "/job/", "destination": "/job.html" },
 
     { "source": "/oma", "destination": "https://oma-ashen.vercel.app" },
     { "source": "/oma/:path*", "destination": "https://oma-ashen.vercel.app/:path*" },
