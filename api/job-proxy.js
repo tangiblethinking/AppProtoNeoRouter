@@ -1,32 +1,37 @@
 const UPSTREAM = "https://ats-x.vercel.app";
 
-/** Paths that must stay under /job so the browser requests them through this proxy. */
-const ROOT_ASSET_PREFIXES = ["/assets/", "/__grok/", "/favicon.svg", "/favicon.ico"];
-
+/**
+ * Map incoming /api/job-proxy[/...] to upstream path on ats-x.
+ * Rewrites:
+ *   /job              → /api/job-proxy
+ *   /job/:path*       → /api/job-proxy/:path*
+ */
 function upstreamPath(reqUrl) {
-  const u = new URL(reqUrl);
-  // /api/job-proxy  or  /api/job-proxy?path=assets/foo.js  or rewrite injects path
-  const pathParam = u.searchParams.get("path");
-  if (pathParam != null && pathParam !== "") {
-    // Vercel may pass path as "assets/foo" or "assets/foo/bar"
-    const joined = pathParam.startsWith("/") ? pathParam : `/${pathParam}`;
-    return joined;
+  const u = new URL(reqUrl, "http://localhost");
+  let pathname = u.pathname || "/";
+  // Strip the function prefix
+  if (pathname === "/api/job-proxy" || pathname === "/api/job-proxy/") {
+    return "/";
   }
-  // Direct hits via /job rewrite without path query → upstream root
-  return "/";
+  if (pathname.startsWith("/api/job-proxy/")) {
+    return pathname.slice("/api/job-proxy".length) || "/";
+  }
+  // Fallback if somehow invoked as /job directly
+  if (pathname === "/job" || pathname === "/job/") return "/";
+  if (pathname.startsWith("/job/")) return pathname.slice("/job".length) || "/";
+  return pathname;
 }
 
 function rewriteHtml(html) {
   let out = html;
-  // Root-relative asset URLs → under /job so they hit this proxy
+  // Root-relative asset URLs → under /job so they hit this proxy again
   out = out.replace(/(href|src)=(["'])\/(assets\/)/g, "$1=$2/job/$3");
   out = out.replace(/(href|src)=(["'])\/(__grok\/)/g, "$1=$2/job/$3");
   out = out.replace(/(href|src)=(["'])\/(favicon\.svg)/g, "$1=$2/job/$3");
   out = out.replace(/(href|src)=(["'])\/(favicon\.ico)/g, "$1=$2/job/$3");
-  // modulepreload / link href in serialized router payloads
-  out = out.replace(/("|")\/assets\//g, "$1/job/assets/");
-  out = out.replace(/preloads:\["\/assets\//g, 'preloads:["/job/assets/');
-  out = out.replace(/src:\"\/assets\//g, 'src:"/job/assets/');
+  // Serialized router / modulepreload payloads
+  out = out.replace(/\/assets\//g, "/job/assets/");
+  out = out.replace(/\/__grok\//g, "/job/__grok/");
   return out;
 }
 
@@ -45,9 +50,7 @@ export default async function handler(req, res) {
     const path = upstreamPath(req.url);
     const target = new URL(path, UPSTREAM);
 
-    // Forward query string except our internal path param
     const incoming = new URL(req.url, "http://localhost");
-    incoming.searchParams.delete("path");
     for (const [k, v] of incoming.searchParams) {
       target.searchParams.set(k, v);
     }
@@ -82,7 +85,6 @@ export default async function handler(req, res) {
 
     const upstreamRes = await fetch(target.toString(), init);
 
-    // Pass through status and most headers
     res.statusCode = upstreamRes.status;
     upstreamRes.headers.forEach((value, key) => {
       const lower = key.toLowerCase();
@@ -93,12 +95,12 @@ export default async function handler(req, res) {
       ) {
         return;
       }
-      // Avoid leaking upstream location to ats-x host for relative redirects
       if (lower === "location") {
         try {
           const loc = new URL(value, UPSTREAM);
           if (loc.origin === new URL(UPSTREAM).origin) {
-            const mapped = `/job${loc.pathname === "/" ? "" : loc.pathname}${loc.search}`;
+            const mapped =
+              `/job${loc.pathname === "/" ? "" : loc.pathname}${loc.search}`;
             res.setHeader("location", mapped);
             return;
           }
@@ -120,10 +122,12 @@ export default async function handler(req, res) {
 
     if (shouldRewriteBody(ct) && buf.length > 0) {
       const text = buf.toString("utf8");
-      // Only rewrite HTML (and JS that embeds absolute asset paths from the app)
       if (ct.includes("text/html") || text.includes("/assets/")) {
         const rewritten = rewriteHtml(text);
-        res.setHeader("content-type", ct.includes("text/html") ? "text/html; charset=utf-8" : ct);
+        res.setHeader(
+          "content-type",
+          ct.includes("text/html") ? "text/html; charset=utf-8" : ct,
+        );
         res.end(rewritten);
         return;
       }
