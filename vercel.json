@@ -3,6 +3,9 @@
   "rewrites": [
     { "source": "/job", "destination": "/job.html" },
     { "source": "/job/", "destination": "/job.html" },
+    
+    { "source": "/cart", "destination": "https://moderncheckout.vercel.app" },
+    { "source": "/cart/", "destination": "https://moderncheckout.vercel.app/:path*" },
 
     { "source": "/oma", "destination": "https://oma-ashen.vercel.app" },
     { "source": "/oma/:path*", "destination": "https://oma-ashen.vercel.app/:path*" },
