@@ -1,6 +1,9 @@
 {
   "cleanUrls": false,
   "rewrites": [
+    { "source": "/portfolio", "destination": "https://portfotest.vercel.app" },
+    { "source": "/portfolio/:path*", "destination": "https://portfotest.vercel.app/:path*" }
+    
     { "source": "/job", "destination": "/job.html" },
     { "source": "/job/", "destination": "/job.html" },
     
