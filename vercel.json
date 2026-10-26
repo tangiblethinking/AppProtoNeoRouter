@@ -2,6 +2,7 @@
   "cleanUrls": false,
   "rewrites": [
     { "source": "/jobs", "destination": "https://ats-x2-prod.vercel.app" },
+    { "source": "/jobs/", "destination": "https://ats-x2-prod.vercel.app" },
     { "source": "/jobs/:path*", "destination": "https://ats-x2-prod.vercel.app/:path*" },
     
     { "source": "/portfolio", "destination": "https://portfoprod.vercel.app" },
