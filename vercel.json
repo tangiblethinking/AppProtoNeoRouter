@@ -2,7 +2,7 @@
   "cleanUrls": false,
   "rewrites": [
     { "source": "/portfolio", "destination": "https://portfoprod.vercel.app" },
-    { "source": "/portfolio/:path*", "destination": "https://portfoprod.vercel.app/:path*" }
+    { "source": "/portfolio/:path*", "destination": "https://portfoprod.vercel.app/:path*" },
     
     { "source": "/job", "destination": "/job.html" },
     { "source": "/job/", "destination": "/job.html" },
