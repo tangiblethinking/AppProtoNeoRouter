@@ -1,6 +1,9 @@
 {
   "cleanUrls": false,
   "rewrites": [
+    { "source": "/interview", "destination": "https://interview-eight-pi.vercel.app" },
+    { "source": "/interview/:path*", "destination": "https://interview-eight-pi.vercel.app/:path*" },
+    
     { "source": "/portfolio", "destination": "https://portfoprod.vercel.app" },
     { "source": "/portfolio/:path*", "destination": "https://portfoprod.vercel.app/:path*" },
 
