@@ -4,6 +4,10 @@
     { "source": "/portfolio", "destination": "https://portfoprod.vercel.app" },
     { "source": "/portfolio/:path*", "destination": "https://portfoprod.vercel.app/:path*" },
     
+    { "source": "/jobs", "destination": "https://ats-x2-prod.vercel.app/jobs" },
+    { "source": "/jobs/", "destination": "https://ats-x2-prod.vercel.app/jobs/" },
+    { "source": "/jobs/:path*", "destination": "https://ats-x2-prod.vercel.app/jobs/:path*" },
+    
     { "source": "/job", "destination": "/job.html" },
     { "source": "/job/", "destination": "/job.html" },
     
