@@ -53,7 +53,7 @@
     { "source": "/collaboration", "destination": "https://opodesignonovo.vercel.app" },
     { "source": "/collaboration/:path*", "destination": "https://opodesignonovo.vercel.app/:path*" },
 
-    { "source": "/", "destination": "https://portfotest.vercel.app" },
-    { "source": "/:path*", "destination": "https://portfotest.vercel.app/:path*" }
+    { "source": "/", "destination": "https://portforag-test.vercel.app/" },
+    { "source": "/:path*", "destination": "https://portforag-test.vercel.app/:path*" }
   ]
 }
